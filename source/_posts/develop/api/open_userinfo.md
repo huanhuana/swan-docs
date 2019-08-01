@@ -103,7 +103,7 @@ Page({
 
 ## swan.getUserInfo
 
-> 此 api 将来会被废弃，请开发者尽快升级使用 [button 组件](/develop/component/formlist/#button/) 代替
+> API调用方式未来将被禁用，请尽快升级使用 [button 组件](/develop/component/formlist/#button/) 代替
 
 **解释**：获取用户信息，首次使用的用户会弹出授权提示窗，若用户同意，则会返回用户的真实数据；若用户未登录或者拒绝授权，会返回默认用户“百度网友”及默认的头像地址。
 
