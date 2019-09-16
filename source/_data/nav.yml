@@ -1496,6 +1496,22 @@
                       link: /develop/api/media_recorder/#RecorderManager-onStop
                       text: RecorderManager.onStop
                       name: media_recorder_RecorderManager-onStop
+                    -
+                      link: /develop/api/media_recorder/#RecorderManager-onError
+                      text: RecorderManager.onError
+                      name: media_recorder_RecorderManager-onError
+                    -
+                      link: /develop/api/media_recorder/#RecorderManager-onResume
+                      text: RecorderManager.onResume
+                      name: media_recorder_RecorderManager-onResume
+                    -
+                      link: /develop/api/media_recorder/#RecorderManager-onInterruptionBegin
+                      text: RecorderManager.onInterruptionBegin
+                      name: media_recorder_RecorderManager-onInterruptionBegin
+                    -
+                      link: /develop/api/media_recorder/#RecorderManager-onInterruptionEnd
+                      text: RecorderManager.onInterruptionEnd
+                      name: media_recorder_RecorderManager-onInterruptionEnd
                 - link: /develop/api/media_recorder/#swan-getAvailableAudioSources
                   text: swan.getAvailableAudioSources
                   name: media_recorder_swan-getAvailableAudioSources
