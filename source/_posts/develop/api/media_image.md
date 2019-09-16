@@ -10,6 +10,10 @@ sidebar: media_image
 
 **解释**：从本地相册选择图片或使用相机拍照。
 
+**百度APP中扫码体验：**
+
+<img src="https://b.bdstatic.com/miniapp/assets/images/doc_demo/api-image.png"  class="demo-qrcode-image" />
+
 **方法参数**：Object object
 
 **`object`参数说明**：
@@ -87,6 +91,10 @@ swan.chooseImage({
 ## swan.previewImage
 
 **解释**： 预览图片。
+
+**百度APP中扫码体验：**
+
+<img src="https://b.bdstatic.com/miniapp/assets/images/doc_demo/previewImage.png"  class="demo-qrcode-image" />
 
 **方法参数**：Object object
 
@@ -326,6 +334,10 @@ Page({
 > 基础库 3.30.3开始支持，低版本需做兼容处理
 
 **解释**：打开本地相册，相册内可以同时包含图片和视频。
+
+**百度APP中扫码体验：**
+
+<img src="https://b.bdstatic.com/miniapp/assets/images/doc_demo/chooseAlbum.png"  class="demo-qrcode-image" />
 
 **方法参数**：Object object
 
