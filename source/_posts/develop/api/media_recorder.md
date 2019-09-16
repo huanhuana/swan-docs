@@ -43,6 +43,18 @@ recorderManager.onStop(function(res) {
     console.log('recorder stop', res)
     const { tempFilePath } = res
 });
+recorderManager.onResume(function() {
+    // 继续录音事件
+    console.log('recorder resume')
+});
+recorderManager.onInterruptionBegin(function() {
+    // 终端录音开始事件
+    console.log('recorder interruptionBegin')
+});
+recorderManager.onInterruptionEnd(function() {
+    // 终端录音结束事件
+    console.log('recorder interruptionEnd')
+});
 
 const options = {
     duration: 10000,
@@ -143,6 +155,24 @@ recorderManager.start(options);
 |---- | ---- | ---- |
 |errMsg |String | 错误信息 |
 |errCode|Number|错误码信息|
+
+## RecorderManager.onResume
+
+**解释**： 录音继续事件
+
+**方法参数**：Function callback
+
+## RecorderManager.onInterruptionBegin
+
+**解释**： 录音因为受到系统占用而被中断开始事件，来电话时会触发此事件。pause 事件在此事件后触发。
+
+**方法参数**：Function callback
+
+## RecorderManager.onInterruptionEnd
+
+**解释**： 录音中断结束事件。在收到 interruptionBegin 事件之后，小程序内所有录音会暂停，收到此事件之后才可再次录音成功。
+
+**方法参数**：Function callback
 
 ## swan.getAvailableAudioSources
 > 基础库3.80.2开始支持，低版本需做兼容处理
