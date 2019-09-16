@@ -233,7 +233,7 @@ swan.previewImage({
 
 |参数  |类型 | 说明|
 |---- | ---- | ---- |
-|tempFilePath |  string | 压缩后图片的临时文件路径示例代码|
+|tempFilePath |  String | 压缩后图片的临时文件路径示例代码|
 
 <!-- **示例**：
 
