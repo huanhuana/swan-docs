@@ -2,7 +2,6 @@
 !function(pathname){
     var urlMap = {
         '/docs/design/principle/':'/docs/design/overview/introduction/',
-        '/docs/develop/component/media_live-player/':'/docs/develop/component/media/',
         '/docs/design/component/nav/':'/docs/design/component/topnav/',
         '/docs/develop/server/upstream/':'/docs/develop/web/detail/',
         '/docs/develop/api/open_feed/':'/docs/develop/api/open_feed/#submitresource/',
@@ -412,7 +411,7 @@
             $.ajax({
                 url: href,
                 dataType: 'html',
-                success: function (res) {
+                success: res => {
                     var $html = $($.parseHTML(res));
                     var article = $html.find('#article-main-content').html();
                     var docMenu = $html.find('#m-doc-menu-wrapper').html();

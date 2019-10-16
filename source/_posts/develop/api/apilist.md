@@ -5,7 +5,7 @@ nav: api
 sidebar: apilist
 ---
 
-> API [错误码](https://smartprogram.baidu.com/docs/develop/api/errorcode)
+> API [错误码](/develop/api/errorcode/)
 
 ## 网络
 
@@ -61,6 +61,7 @@ sidebar: apilist
 |<a href="http://smartprogram.baidu.com/docs/develop/api/media_image/#swan-chooseImage/">swan.chooseImage</a>|从本地相册选择图片或使用相机拍照。|
 |<a href="https://smartprogram.baidu.com/docs/develop/api/media_image/#swan-previewImage/">swan.previewImage</a>|预览图片|
 |<a href="https://smartprogram.baidu.com/docs/develop/api/media_image/#swan-getImageInfo/">swan.getImageInfo</a>|获取图片信息|
+|<a href="https://smartprogram.baidu.com/docs/develop/api/media_image/#swan-compressImage/">swan.compressImage</a>|压缩图片接口|
 |<a href="https://smartprogram.baidu.com/docs/develop/api/media_image/#swan-saveImageToPhotosAlbum/">swan.saveImageToPhotosAlbum</a>|保存图片到系统相册，需要用户授权。|
 |<a href="https://smartprogram.baidu.com/docs/develop/api/media_image/#swan-chooseAlbum/">swan.chooseAlbum</a>|打开本地相册，相册内可以同时包含图片和视频。|
 |<a href="https://smartprogram.baidu.com/docs/develop/api/media_recorder/#swan-getRecorderManager/">swan.getRecorderManager</a>|获取全局唯一的录音管理器recorderManager。|
@@ -221,10 +222,10 @@ sidebar: apilist
 
 |API 名称|解释|
 |--|--|
-|<a href="https://smartprogram.baidu.com/docs/develop/api/device_sys/#swan-getSystemInfo/">swan.getSystemInfo</a>|获取系统信息|
-|<a href="https://smartprogram.baidu.com/docs/develop/api/device_sys/#swan-getSystemInfoSync/">swan.getSystemInfoSync</a>|获取系统信息同步接口|
-|<a href="https://smartprogram.baidu.com/docs/develop/api/device_sys/#swan-getEnvInfoSync/">swan.getEnvInfoSync</a>|获取运行环境信息同步接口|
-|<a href="https://smartprogram.baidu.com/docs/develop/api/device_sys/#swan-canIUse/">swan.canIUse</a>|判断智能小程序的API，回调，参数，组件等是否在当前版本可用。|
+|<a href="https://smartprogram.baidu.com/docs/develop/api/device_sys/swan-getSystemInfo/">swan.getSystemInfo</a>|获取系统信息|
+|<a href="https://smartprogram.baidu.com/docs/develop/api/device_sys/swan-getSystemInfoSync/">swan.getSystemInfoSync</a>|获取系统信息同步接口|
+|<a href="https://smartprogram.baidu.com/docs/develop/api/device_sys/swan-getEnvInfoSync/">swan.getEnvInfoSync</a>|获取运行环境信息同步接口|
+|<a href="https://smartprogram.baidu.com/docs/develop/api/device_sys/swan-canIUse/">swan.canIUse</a>|判断智能小程序的API，回调，参数，组件等是否在当前版本可用。|
 |<a href="https://smartprogram.baidu.com/docs/develop/api/device_onmemory/#swan-onMemoryWarning/">swan.onMemoryWarning</a>|监听内存不足的告警事件，Android 下有告警等级划分，只有 LOW 和 CRITICAL 会回调开发者；iOS 无等级划分。|
 |<a href="https://smartprogram.baidu.com/docs/develop/api/device_network/#swan-getNetworkType/">swan.getNetworkType</a>|获取网络类型|
 |<a href="https://smartprogram.baidu.com/docs/develop/api/device_network/#swan-onNetworkStatusChange/">swan.onNetworkStatusChange</a>|监听网络状态变化|
