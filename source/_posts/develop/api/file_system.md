@@ -284,7 +284,7 @@ Page({
     },
     saveFile() {
         this.fs.saveFile({
-            tempFilePath: '/usr/temp.txt',
+            tempFilePath: '/usr/temp.txt', // 仅为示例，实际上请传真实临时路径地址，如 swan.downloadFile 的 tempFilePath 返回参数
             filePath: `${swan.env.USER_DATA_PATH}/`,
             success: res => {
                 console.log('saveFile success', res);
@@ -297,7 +297,7 @@ Page({
     saveFileSync() {
         try {
             let result = this.fs.saveFileSync(
-                '/usr/temp.txt',
+                '/usr/temp.txt', // 仅为示例，实际上请传真实临时路径地址，如 swan.downloadFile 的 tempFilePath 返回参数
                 `${swan.env.USER_DATA_PATH}/`
             );
             console.log('saveFileSync success', result);
@@ -423,8 +423,8 @@ Page({
 |参数名 |类型|必填|默认值|说明|最低支持版本|
 |----|----|----|----|----|----|
 |filePath|String|是|-|文件/目录路径|-|
-|data|String/ArrayBuffer|是|-|要追加的文本或二进制内容|-|
-|encoding|String|否|utf-8|	指定写入文件的字符编码|-|
+|data|String|是|-|要追加的文本|-|
+|encoding|String|否|utf8|	指定写入文件的字符编码|-|
 |success|Function|否|-|接口调用成功的回调函数|-|
 |fail|Function|否|-|接口调用失败的回调函数|-|
 |complete|Function|否|-|接口调用结束的回调函数（调用成功、失败都会执行）|-|
@@ -437,18 +437,18 @@ Page({
 |base64|对输入的字符串进行 base64 解码再写入|
 |hex|十六进制|
 |ucs2/ucs-2/utf16le/utf-16le|以小端序读取|
-|utf-8/utf8||
+|utf8/utf8||
 |latin1/binary|ISO-8859-1 的别名|
 
 ##  FileSystemManager.appendFileSync
 
 **解释**：在文件结尾追加内容同步接口。
 
-**方法参数**：String path, String/ArrayBuffer data, String encoding
+**方法参数**：String path, String data, String encoding
 
 **`path`参数说明**：文件/目录路径。
 
-**`data`参数说明**：要追加的文本或二进制数据。
+**`data`参数说明**：要追加的文本。
 
 **`encoding`参数说明**：指定写入文件的字符编码。
 
@@ -460,7 +460,7 @@ Page({
 |base64|对输入的字符串进行 base64 解码再写入|
 |hex|十六进制|
 |ucs2/ucs-2/utf16le/utf-16le|以小端序读取|
-|utf-8/utf8||
+|utf8/utf8||
 |latin1/binary|ISO-8859-1 的别名|
 
 ##  FileSystemManager.copyFile
@@ -512,7 +512,7 @@ Page({
 
 ##  FileSystemManager.getSavedFileList
 
-**解释**：获取该小程序下已保存的本地缓存文件列表。
+**解释**：获取该小程序下已保存的本地用户文件列表。
 
 **方法参数**：Object object
 
@@ -601,7 +601,7 @@ Page({
 |参数名 |类型|必填|默认值|说明|最低支持版本|
 |----|----|----|----|----|----|
 |filePath|String|是|-|文件/目录路径。“本地用户文件”须以 swan.env.USER_DATA_PATH 开头（如 'swan.env.USER_DATA_PATH' + '/demo.txt'），否则认为是“代码包文件”（如 'asset/bg.jpg'）。不支持相对路径。|-|
-|encoding|String|否|utf-8|指定读文件的字符编码。|-|
+|encoding|String|否|utf8|指定读文件的字符编码。|-|
 |success|Function|否|-|接口调用成功的回调函数|-|
 |fail|Function|否|-|接口调用失败的回调函数|-|
 |complete|Function|否|-|接口调用结束的回调函数（调用成功、失败都会执行）|-|
@@ -614,14 +614,14 @@ Page({
 |base64|对输入的字符串进行 base64 解码再写入|
 |hex|十六进制|
 |ucs2/ucs-2/utf16le/utf-16le|以小端序读取|
-|utf-8/utf8||
+|utf8/utf8||
 |latin1/binary|ISO-8859-1 的别名|
 
 **success 返回参数说明**：
 
 |参数|类型|说明|
 |---- | ---- | ---- |
-|data|String/ArrayBuffer|读取结果|
+|data|String|读取结果|
 
 ##  FileSystemManager.readFileSync
 
@@ -631,7 +631,7 @@ Page({
 
 **`filePath`参数说明**：文件/目录路径。“本地用户文件”须以 swan.env.USER_DATA_PATH 开头（如 'swan.env.USER_DATA_PATH' + '/demo.txt'），否则认为是“代码包文件”（如 'asset/bg.jpg'）。不支持相对路径。
 
-**`encoding`参数说明**：指定读文件的字符编码，默认 'utf-8'。
+**`encoding`参数说明**：指定读文件的字符编码，默认 'utf8'。
 
 **encoding 的合法值**
 
@@ -641,18 +641,18 @@ Page({
 |base64|对输入的字符串进行 base64 解码再写入|
 |hex|十六进制|
 |ucs2/ucs-2/utf16le/utf-16le|以小端序读取|
-|utf-8/utf8||
+|utf8/utf8||
 |latin1/binary|ISO-8859-1 的别名|
 
 **同步返回参数说明**：
 
 |参数|类型|说明|
 |---- | ---- | ---- |
-|data|String/ArrayBuffer|读取结果|
+|data|String|读取结果|
 
 ##  FileSystemManager.removeSavedFile
 
-**解释**：删除该小程序下已保存的本地缓存文件。
+**解释**：删除该小程序下已保存的本地用户文件。
 
 **方法参数**：Object object
 
@@ -775,6 +775,10 @@ Page({
 
 |参数名|参数类型 |说明|
 |---|---|---|---|
+|mode|String|文件的类型和存取的权限，对应 POSIX stat.st_mode|
+|size|Number|文件大小，单位：B，对应 POSIX stat.st_size|
+|lastAccessedTime|Number|文件最近一次被存取或被执行的时间，UNIX 时间戳，对应 POSIX stat.st_atime|
+|lastModifiedTime|Number|文件最后一次被修改的时间，UNIX 时间戳，对应 POSIX stat.st_mtime|
 |isDirectory|Function|判断当前文件是否一个目录，返回 boolean 值|
 |isFile|Function|判断当前文件是否一个普通文件，返回 boolean 值|
 
@@ -792,6 +796,10 @@ Page({
 
 |参数名|参数类型 |说明|
 |---|---|---|---|
+|mode|String|文件的类型和存取的权限，对应 POSIX stat.st_mode|
+|size|Number|文件大小，单位：B，对应 POSIX stat.st_size|
+|lastAccessedTime|Number|文件最近一次被存取或被执行的时间，UNIX 时间戳，对应 POSIX stat.st_atime|
+|lastModifiedTime|Number|文件最后一次被修改的时间，UNIX 时间戳，对应 POSIX stat.st_mtime|
 |isDirectory|Function|判断当前文件是否一个目录，返回 boolean 值|
 |isFile|Function|判断当前文件是否一个普通文件，返回 boolean 值|
 
@@ -845,8 +853,8 @@ Page({
 |参数名 |类型|必填|默认值|说明|最低支持版本|
 |----|----|----|----|----|----|
 |filePath|String|是|-|文件/目录路径。须以 swan.env.USER_DATA_PATH 开头（如 'swan.env.USER_DATA_PATH' + '/demo.txt'）|-|
-|data|String/ArrayBuffer|是|-|要写入的文本或二进制数据|-|
-|encoding|String|否|-|指定写入文件的字符编码。如果 data 为 ArrayBuffer，就不要传入 encoding。如果 data 为 string，encoding 默认为 utf8|-|
+|data|String|是|-|要写入的文本|-|
+|encoding|String|否|utf8|指定写入文件的字符编码。|-|
 |success|Function|否|-|接口调用成功的回调函数|-|
 |fail|Function|否|-|接口调用失败的回调函数|-|
 |complete|Function|否|-|接口调用结束的回调函数（调用成功、失败都会执行）|-|
@@ -859,20 +867,20 @@ Page({
 |base64|对输入的字符串进行 base64 解码再写入|
 |hex|十六进制|
 |ucs2/ucs-2/utf16le/utf-16le|以小端序读取|
-|utf-8/utf8||
+|utf8/utf8||
 |latin1/binary|ISO-8859-1 的别名|
 
 ##  FileSystemManager.writeFileSync
 
 **解释**：写文件同步接口。
 
-**方法参数**：String filePath, String/ArrayBuffer data, String encoding
+**方法参数**：String filePath, String data, String encoding
 
 **`filePath`参数说明**：文件/目录路径。须以 swan.env.USER_DATA_PATH 开头（如 'swan.env.USER_DATA_PATH' + '/demo.txt'）。
 
-**`data`参数说明**：要写入的文本或二进制数据。
+**`data`参数说明**：要写入的文本。
 
-**`encoding`参数说明**：指定写入文件的字符编码。如果 data 为 ArrayBuffer，就不要传入 encoding。如果 data 为 string，encoding 默认为 utf8。
+**`encoding`参数说明**：指定写入文件的字符编码，默认为 utf8。
 
 **encoding 的合法值**
 
@@ -882,5 +890,5 @@ Page({
 |base64|对输入的字符串进行 base64 解码再写入|
 |hex|十六进制|
 |ucs2/ucs-2/utf16le/utf-16le|以小端序读取|
-|utf-8/utf8||
+|utf8/utf8||
 |latin1/binary|ISO-8859-1 的别名|
