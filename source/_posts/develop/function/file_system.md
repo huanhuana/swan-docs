@@ -96,9 +96,3 @@ fs.mkdirSync(`${swan.env.USER_DATA_PATH}/my`);
 |本地缓存文件|有|无|
 |本地用户文件|有|有|
 
-## 用户资源继承与清理策略
-
-对于同一个小程序，本地文件系统存在用户登录资源继承与用户退登资源清理策略。当使用 [FileSystemManager API](/develop/api/file_system/#FileSystemManager/) 读写文件时：
-
-+ 在未登录状态，若在文件系统存储了文件，则在用户登录时，文件将被继承到该账户。
-+ 在用户退出登录时，将清理运行中的小程序进程，同时清空文件系统全部数据。

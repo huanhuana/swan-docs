@@ -4370,10 +4370,6 @@
               link: /develop/function/file_system/#读写权限
               text: 读写权限
               name: file_system_读写权限
-          -
-            link: /develop/function/file_system/#用户资源继承与清理策略
-            text: 用户资源继承与清理策略
-            name: file_system_用户资源继承与清理策略
 
     -
       link: /develop/swan

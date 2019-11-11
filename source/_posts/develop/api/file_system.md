@@ -16,9 +16,9 @@ sidebar: file_system
 
 **解释**：文件管理器。
 
-**示例**：
+<!-- **示例**：
 
-<a href="swanide://fragment/c1cd19f4bd6c53b0c272aa1d2bce10481557729887965" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
+<a href="swanide://fragment/c1cd19f4bd6c53b0c272aa1d2bce10481557729887965" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a> -->
 
 * 在 swan 文件中
 
@@ -423,7 +423,7 @@ Page({
 |参数名 |类型|必填|默认值|说明|最低支持版本|
 |----|----|----|----|----|----|
 |filePath|String|是|-|文件/目录路径|-|
-|data|String|是|-|要追加的文本|-|
+|data|String/ArrayBuffer|是|-|要追加的文本|-|
 |encoding|String|否|utf8|	指定写入文件的字符编码|-|
 |success|Function|否|-|接口调用成功的回调函数|-|
 |fail|Function|否|-|接口调用失败的回调函数|-|
@@ -444,7 +444,7 @@ Page({
 
 **解释**：在文件结尾追加内容同步接口。
 
-**方法参数**：String path, String data, String encoding
+**方法参数**：String path, String/ArrayBuffer data, String encoding
 
 **`path`参数说明**：文件/目录路径。
 
@@ -853,7 +853,7 @@ Page({
 |参数名 |类型|必填|默认值|说明|最低支持版本|
 |----|----|----|----|----|----|
 |filePath|String|是|-|文件/目录路径。须以 swan.env.USER_DATA_PATH 开头（如 'swan.env.USER_DATA_PATH' + '/demo.txt'）|-|
-|data|String|是|-|要写入的文本|-|
+|data|String/ArrayBuffer|是|-|要写入的文本|-|
 |encoding|String|否|utf8|指定写入文件的字符编码。|-|
 |success|Function|否|-|接口调用成功的回调函数|-|
 |fail|Function|否|-|接口调用失败的回调函数|-|
@@ -874,7 +874,7 @@ Page({
 
 **解释**：写文件同步接口。
 
-**方法参数**：String filePath, String data, String encoding
+**方法参数**：String filePath, String/ArrayBuffer data, String encoding
 
 **`filePath`参数说明**：文件/目录路径。须以 swan.env.USER_DATA_PATH 开头（如 'swan.env.USER_DATA_PATH' + '/demo.txt'）。
 
