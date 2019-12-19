@@ -12,6 +12,8 @@ sidebar: file_system
 
 **返回值**：fileSystemManager
 
+若接口调用失败，会抛出一个标准的`Error`对象
+
 ## FileSystemManager
 
 **解释**：文件管理器。
@@ -262,7 +264,6 @@ Page({
     rmdir() {
         this.fs.rmdir({
             dirPath: `${swan.env.USER_DATA_PATH}/rmdir`,
-            encoding: 'utf8',
             success: res => {
                 console.log('rmdir success', res);
             },
@@ -412,6 +413,8 @@ Page({
 
 **`path`参数说明**：文件/目录路径。
 
+若接口调用失败，会抛出一个标准的`Error`对象
+
 ##  FileSystemManager.appendFile
 
 **解释**：在文件结尾追加内容。
@@ -463,6 +466,8 @@ Page({
 |utf8/utf8||
 |latin1/binary|ISO-8859-1 的别名|
 
+若接口调用失败，会抛出一个标准的`Error`对象
+
 ##  FileSystemManager.copyFile
 
 **解释**：用于实现文件拷贝。
@@ -488,6 +493,8 @@ Page({
 **`srcPath`参数说明**：文件/目录路径。
 
 **`destPath`参数说明**：拷贝操作的目标文件名。
+
+若接口调用失败，会抛出一个标准的`Error`对象
 
 ##  FileSystemManager.getFileInfo
 
@@ -553,6 +560,8 @@ Page({
 
 **`dirPath`参数说明**：创建的目录路径。
 
+若接口调用失败，会抛出一个标准的`Error`对象
+
 ##  FileSystemManager.readdir
 
 **解释**：读取本地指定路径下的目录内文件列表。
@@ -590,6 +599,8 @@ Page({
 |files|Array|指定目录下的文件列表|
 |files[].fileItem|String|文件列表里的文件项，存储着路径|
 
+若接口调用失败，会抛出一个标准的`Error`对象
+
 ##  FileSystemManager.readFile
 
 **解释**：读取本地文件内容。
@@ -614,14 +625,14 @@ Page({
 |base64|对输入的字符串进行 base64 解码再写入|
 |hex|十六进制|
 |ucs2/ucs-2/utf16le/utf-16le|以小端序读取|
-|utf8/utf8||
+|utf-8/utf8||
 |latin1/binary|ISO-8859-1 的别名|
 
 **success 返回参数说明**：
 
 |参数|类型|说明|
 |---- | ---- | ---- |
-|string/ArrayBuffer|String|读取结果|
+|data|string/ArrayBuffer|读取结果|
 
 ##  FileSystemManager.readFileSync
 
@@ -641,7 +652,7 @@ Page({
 |base64|对输入的字符串进行 base64 解码再写入|
 |hex|十六进制|
 |ucs2/ucs-2/utf16le/utf-16le|以小端序读取|
-|utf8/utf8||
+|utf-8/utf8||
 |latin1/binary|ISO-8859-1 的别名|
 
 **同步返回参数说明**：
@@ -649,6 +660,8 @@ Page({
 |参数|类型|说明|
 |---- | ---- | ---- |
 |data|String|读取结果|
+
+若接口调用失败，会抛出一个标准的`Error`对象
 
 ##  FileSystemManager.removeSavedFile
 
@@ -690,6 +703,8 @@ Page({
 **`oldPath`参数说明**：源文件/源目录路径。
 **`newPath`参数说明**：目标路径。
 
+若接口调用失败，会抛出一个标准的`Error`对象
+
 ##  FileSystemManager.rmdir
 
 **解释**：删除目录。
@@ -712,6 +727,8 @@ Page({
 **方法参数**：String dirPath
 
 **`dirPath`参数说明**：要删除的目录路径。
+
+若接口调用失败，会抛出一个标准的`Error`对象
 
 ##  FileSystemManager.saveFile
 
@@ -749,6 +766,8 @@ Page({
 |参数|类型|说明|
 |---- | ---- | ---- |
 |savedFilePath|String|存储后的文件路径|
+
+若接口调用失败，会抛出一个标准的`Error`对象
 
 ##  FileSystemManager.stat
 
@@ -803,6 +822,8 @@ Page({
 |isDirectory|Function|判断当前文件是否一个目录，返回 boolean 值|
 |isFile|Function|判断当前文件是否一个普通文件，返回 boolean 值|
 
+若接口调用失败，会抛出一个标准的`Error`对象
+
 ##  FileSystemManager.unlink
 
 **解释**：删除文件。
@@ -825,6 +846,8 @@ Page({
 **方法参数**：String filePath
 
 **`filePath`参数说明**：要删除的文件路径。
+
+若接口调用失败，会抛出一个标准的`Error`对象
 
 ##  FileSystemManager.unzip
 
@@ -867,7 +890,7 @@ Page({
 |base64|对输入的字符串进行 base64 解码再写入|
 |hex|十六进制|
 |ucs2/ucs-2/utf16le/utf-16le|以小端序读取|
-|utf8/utf8||
+|utf-8/utf8||
 |latin1/binary|ISO-8859-1 的别名|
 
 ##  FileSystemManager.writeFileSync
@@ -890,5 +913,7 @@ Page({
 |base64|对输入的字符串进行 base64 解码再写入|
 |hex|十六进制|
 |ucs2/ucs-2/utf16le/utf-16le|以小端序读取|
-|utf8/utf8||
+|utf-8/utf8||
 |latin1/binary|ISO-8859-1 的别名|
+
+若接口调用失败，会抛出一个标准的`Error`对象
