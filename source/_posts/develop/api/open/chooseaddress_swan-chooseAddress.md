@@ -4,7 +4,8 @@ header: develop
 nav: api
 sidebar: chooseaddress_swan-chooseAddress
 ---
- 
+
+> 日后此 api 将会被废弃，请开发者使用 [button](/develop/component/formlist_button/) 代替。
 
 **解释**： 调起用户编辑收货地址原生界面，并在编辑完成后返回用户选择的地址，使用该 API 需通过[获取用户权限设置](https://smartprogram.baidu.com/docs/develop/api/open/authorize_set/)申请授权后方可对用户发起授权申请，可在[需授权接口列表](https://smartprogram.baidu.com/docs/develop/api/open/authorize_list/)中查看相关错误码信息。
 
